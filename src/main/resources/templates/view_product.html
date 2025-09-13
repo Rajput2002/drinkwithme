@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<section>
+<div class="container mt-5">
+    <div class="row">
+    					<th:block th:if="${session.succMsg}">
+						<p class="text-success alert alert-success text-center" role="alert">[[${session.succMsg}]]</p>
+						<th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
+					</th:block>
+
+					<th:block th:if="${session.errorMsg}">
+						<p class="text-danger text-center  alert alert-danger">[[${session.errorMsg}]]</p>
+						<th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
+
+					</th:block>
+        <!-- Product Images -->
+        <div class="col-md-6 mb-4">
+            <img th:src="@{'/img/product_img/'+${product.image}}" alt="Product" class="img-fluid rounded mb-3 product-image" id="mainImage">
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h2 class="mb-3">[[${product.title}]]</h2>
+            
+            <div class="mb-3">
+                <span class="h4 me-2">Rs,
+							[[${product.discountPrice}]] <span
+								class="fs-6 text-decoration-line-through text-secondary">[[${product.price}]]</span>
+							<span class="fs-6  text-success">[[${product.discount}]]%
+								off</span>
+						
+                </span>
+            </div>
+
+            <p class="mb-4">[[${product.description}]].</p>
+            <div class="mb-4">
+                <p>
+							<span class="fw-bold"> Product Details: </span> <br> Status
+							:
+							<th:block th:if="${product.stock>0}">
+								<span class="badge bg-success">Available</span>
+							</th:block>
+
+
+							<br> Category: [[${product.category}]]
+						</p>
+            </div>
+
+            <div class="mb-4">
+                <th:block th:if="${product.stock>0}">
+							<th:block th:if="${user==null}">
+								<a href="/signin" class="btn btn-tertiary btn-lg mb-3 me-2">Add To
+									Cart</a>
+							</th:block>
+
+							<th:block th:unless="${user==null}">
+								<a
+									th:href="@{'/user/addCart?pid='+${product.id}+'&uid='+${user.id}}"
+									class="btn btn-tertiary btn-lg mb-3 me-2">Add To Cart</a>
+							</th:block>
+
+						</th:block>
+
+						<th:block th:unless="${product.stock>0}">
+							<a href="#" class="btn text-white btn-warning col-md-12">Out
+								of Stock</a>
+						</th:block></div>
+    </div>
+</div>
+</div>
+
+
+	</section>
+</body>
+</html>

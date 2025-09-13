@@ -1,0 +1,107 @@
+@charset "ISO-8859-1";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.card-sh {
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cat-div {
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.error {
+	color: red;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05); /* Slight pop effect */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-link:hover {
+    color: gray; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background change */
+    transform: scale(1.05); /* Slight pop effect */
+    transition: all 0.3s ease-in-out; /* Smooth effect */
+}
+
+.dropdown-item:hover {
+    color: white; /* Change text color */
+    background-color: black; /* Keep contrast with black */
+    transform: scale(1.05); /* Slight pop effect */
+    transition: all 0.3s ease-in-out; /* Smooth effect */
+}
+
+
+    .btn-primary{
+    border-radius:7px;
+    padding: 8px 20px;
+    border: none;
+    color: white !important;
+    cursor:pointer;
+    margin-right:10px;
+    background-color: black !important;
+    
+    }
+    
+    .btn-primary:hover{
+    border: none;
+    background-color: black !important;
+    color: white !important;
+    
+    }
+        
+    .btn-tertiary{
+    border-radius:7px;
+    padding: 10px 20px;
+    border: none;
+    color: black !important;
+    cursor:pointer;
+    box-shadow: inset 0 0 0 2px black!important;
+    margin-right:10px;
+    background-color: white !important;
+    display: inline-flex !important; /* Ensures button content is aligned */
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important; /* Prevents text from breaking into two lines */
+    text-decoration: none !important;
+    
+    }
+    
+    .btn-tertiary:hover{
+    border: none;
+    background-color: black !important;
+    color: white !important;
+    }
+    
+    .btn-secondary{
+    border:none;
+    border-radius: 7px;
+    padding: 8px 20px;
+    box-shadow:inset 0 0 0 2px #6c747e;
+    cursor:pointer;
+    }
+    .btn-secondary:hover{
+    border:none;
+    color:white !important;
+    background-color: #6c747e;
+    }
+
+    
+    
+  .list-group-item.active {
+    background-color: black !important;
+    border-color:black !important;
+    color: white !important;
+}
+.page-item.active .page-link {
+	z-index: 1;
+	color: #fff;
+	background-color: black;
+	border-color: black;
+}
+    
